@@ -1,0 +1,14 @@
+{
+	"id": "marvellous",
+	"name": "The Marvellous",
+	"display_name": "Marvellous",
+	"author": ["violant-apologia", "wingedcatgirl"],
+	"description": "Risk it all for your heart's desire!",
+	"prefix": "marv",
+	"main_file": "FLatro.lua",
+	"priority": 0,
+	"version": "0.9.0",
+	"dependencies": [
+        "Steamodded"
+    ],
+}

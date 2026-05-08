@@ -1,0 +1,1 @@
+Implements [the FLatro deck by violant-apologia](https://violant-apologia.tumblr.com/post/766255491109289984/flatro-full-deck) as a Steamodded deckskin. Requires [Steamodded](https://github.com/Steamodded/smods), naturally.
