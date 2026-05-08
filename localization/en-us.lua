@@ -22,13 +22,14 @@ return {
             marv_crowns = "Four Crowns",
             ["Three of a Kind_alt"] = "Conclave",
             Flush_alt = "Unity",
+            marv_tragedy = "Tragedy Procedure",
+            marv_procedure = "Procedure",
             ["Straight Flush_alt"] = "Procedure",
             marv_parliament = "Parliament",
             marv_wells = "Five Wells",
             marv_triumvirate = "Triumvirate of Factions",
             marv_murder = "Murder of Queens",
             marv_perfidy = "Perfidy of Sisters",
-            marv_procedure = "Procedure",
             marv_mirrorcatch = "Mirrorcatch",
             marv_mirror = "Black Glass Mirror",
             marv_doctrine = "Marigold Doctrine",
@@ -38,6 +39,123 @@ return {
             marv_all_manner = "All Manner of Things"
         },
         poker_hand_descriptions = {
+            marv_stone_pig = {
+                "Two Braces, one of 4s",
+                "and one of 3s or 5s"
+            },
+            marv_remorse = {
+                "A Brace of Queens",
+                "plus a single 2"
+            },
+            marv_sisters = {
+                "A Brace of Queens",
+                "and a Brace of 2s"
+            },
+            marv_polythremian = {
+                "A Brace of Jacks",
+                "and a Brace of 2s",
+            },
+            marv_audit = {
+                "One non-court card from",
+                "each of four different suits"
+            },
+            marv_retreat = {
+                "Three sequential cards of the same suit",
+                "including exactly one court card"
+            },
+            marv_fall1 = {
+                "An Ace, Two, and Three,",
+                "in any suits"
+            },
+            marv_fall2 = {
+                "A Two, Three, and Four",
+                "in any suits"
+            },
+            marv_fall3 = {
+                "A Three, Four, and Five",
+                "in any suits"
+            },
+            marv_fall4 = {
+                "A Four, Five, and Six",
+                "in any suits"
+            },
+            marv_fall5 = {
+                "A Five, Six, and Seven,",
+                "in any suits"
+            },
+            marv_fall6 = {
+                "A Six, Seven, and Eight, in any suits",
+                "Cannot be played"
+            },
+            marv_fall7 = {
+                "A Seven, Eight, and Nine, in any suits",
+                "Cannot be played"
+            },
+            marv_crisis = {
+                "Three consecutive ranks,",
+                "in three different suits"
+            },
+            marv_collusion = {
+                "Three cards whose ranks",
+                "sum up to the fourth"
+            },
+            marv_crowns = {
+                "Two Kings and Two Queens"
+            },
+            marv_string = {
+                "Three or four sequential",
+                "cards of the same suit"
+            },
+            marv_tragedy = {
+                "Four or five sequential cards,",
+                "all of the same suit but one"
+            },
+            marv_procedure = {
+                "Four or five sequential cards,",
+                "all of the same suit"
+            },
+            marv_parliament = {
+                "The Jack, Queen, and King",
+                "of one suit"
+            },
+            marv_wells = {
+                "Two Braces, plus an Ace"
+            },
+            marv_triumvirate = {
+                "One face card each",
+                "of Cats, Bats, and Rats"
+            },
+            marv_murder = {
+                "All four Queens"
+            },
+            marv_perfidy = {
+                "Four Queens, four suits, with three from",
+                "your hand and the last from the river"
+            },
+            marv_mirrorcatch = {
+                "Two identical three-rank runs in differing suits"
+            },
+            marv_mirror = {
+                "A Brace of Kings plus a String of Bats"
+            },
+            marv_doctrine = {
+                "An Ace, Three, Five, Seven, and Nine",
+                "all from the same suit"
+            },
+            marv_bats = {
+                "Five consecutive ranked cards of four",
+                "suits, beginning and ending with Bats"
+            },
+            marv_chain = {
+                "Seven cards in ascending sequence,",
+                "each adjacent pair sharing a suit"
+            },
+            marv_ascension = {
+                "Each rank from Two to Nine of the same suit"
+            },
+            marv_all_manner = {
+                "Four Sevens, one of each suit"
+            },
 
         },
         ranks = {
