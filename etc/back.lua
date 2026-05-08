@@ -61,6 +61,23 @@ SMODS.Back{
             end
         end
 
+        if context.modify_hand then
+            local shrinkable = {
+                marv_String = true,
+                marv_Tragedy = true,
+                marv_Procedure = true,
+            }
+            if shrinkable[context.scoring_name] and #context.scoring_hand - SMODS.four_fingers(context.scoring_name) < 0 then
+                return {
+                    func = function ()
+                        for _,parameter in pairs(SMODS.Scoring_Parameters) do
+                            parameter:modify(-math.ceil(parameter.amount * 0.2))
+                        end
+                    end
+                }
+            end
+        end
+
         if context.debuff_hand and (context.scoring_name == "marv_fall6" or context.scoring_name == "marv_fall7") then
             return {
                 debuff = true,
