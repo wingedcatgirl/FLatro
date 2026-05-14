@@ -44,48 +44,35 @@ SMODS.Back{
         end
     end,
     calculate = function (self, back, context)
-        if context.evaluate_poker_hand then
-            local renames = {
-                ["High Card"] = true,
-                Pair = true,
-                ["Two Pair"] = true,
-                ["Three of a Kind"] = true,
-                Flush = true,
-                ["Straight Flush"] = true,
-            }
-
-            if renames[context.scoring_name] then
-                return {
-                    replace_display_name = localize(context.scoring_name.."_alt", "poker_hands")
-                }
-            end
-        end
-
         if context.modify_hand then
             local shrinkable = {
                 marv_String = true,
                 marv_Tragedy = true,
                 marv_Procedure = true,
+                marv_Mirror = true
             }
-            if shrinkable[context.scoring_name] and #context.scoring_hand - SMODS.four_fingers(context.scoring_name) < 0 then
+            if shrinkable[context.scoring_name] then
+                local diff = #context.scoring_hand - SMODS.four_fingers(context.scoring_name)
+                print(diff)
+                if diff == 0 then return nil end
                 return {
                     func = function ()
                         for _,parameter in pairs(SMODS.Scoring_Parameters) do
-                            parameter:modify(-math.ceil(parameter.amount * 0.2))
+                            parameter:modify(math.floor(parameter.current * 0.2 * diff))
                         end
                     end
                 }
             end
         end
 
-        if context.debuff_hand and (context.scoring_name == "marv_fall6" or context.scoring_name == "marv_fall7") then
+        if context.debuff_hand and (context.scoring_name == "marv_Fall6" or context.scoring_name == "marv_Fall7") then
             return {
                 debuff = true,
                 debuff_text = localize{
                     type = "variable",
                     key = "marv_disallowed_falls",
                     vars = {
-                        context.display_name
+                        localize(context.scoring_name, "poker_hands")
                     }
                 }
             }

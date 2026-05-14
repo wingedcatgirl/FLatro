@@ -2,6 +2,7 @@ SMODS.PokerHand{
     key = "Stone_pig",
     chips = 20,
     mult = 2,
+    above_hand = "Two Pair",
     l_chips = 15,
     l_mult = 2,
     example = {
@@ -11,15 +12,19 @@ SMODS.PokerHand{
         { "C_7", false },
         { "S_4", true },
     },
+    visible = function (self)
+        return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
+    end,
     evaluate = function (parts, hand)
+        if not G.GAME.marv_marvellous then return {} end
         local result = {}
         local four, threefive = false, false
-        for i,v in ipairs(parts) do
-            if v[1]:get_id() == 4 then
+        for i,v in ipairs(parts._2) do
+            if v[1] and v[1]:get_id() == 4 then
                 four = true
                 result[#result+1] = v
             end
-            if v[1]:get_id() == 3 or v[1]:get_id() == 5 then
+            if v[1] and (v[1]:get_id() == 3 or v[1]:get_id() == 5) then
                 threefive = true
                 result[#result+1] = v
             end
@@ -32,6 +37,7 @@ SMODS.PokerHand{
     key = "Remorse",
     chips = 15,
     mult = 3,
+    above_hand = "marv_Stone_pig",
     l_chips = 10,
     l_mult = 3,
     example = {
@@ -41,11 +47,15 @@ SMODS.PokerHand{
         { "C_7", false },
         { "S_Q", true },
     },
+    visible = function (self)
+        return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
+    end,
     evaluate = function (parts, hand)
+        if not G.GAME.marv_marvellous then return {} end
         local result = {}
         local queen, two = false, false
-        for i,v in ipairs(parts) do
-            if v[1]:get_id() == SMODS.Ranks.queen.id then
+        for i,v in ipairs(parts._2) do
+            if v[1] and v[1]:get_id() == SMODS.Ranks.Queen.id then
                 queen = true
                 result[#result+1] = v
             end
@@ -64,6 +74,7 @@ SMODS.PokerHand{
     key = "Sisters",
     chips = 15,
     mult = 4,
+    above_hand = "marv_Remorse",
     l_chips = 10,
     l_mult = 3,
     example = {
@@ -73,15 +84,19 @@ SMODS.PokerHand{
         { "D_Q", true },
         { "H_Q", true },
     },
+    visible = function (self)
+        return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
+    end,
     evaluate = function (parts, hand)
+        if not G.GAME.marv_marvellous then return {} end
         local result = {}
         local queen, twos = false, false
-        for i,v in ipairs(parts) do
-            if v[1]:get_id() == SMODS.Ranks.queen.id then
+        for i,v in ipairs(parts._2) do
+            if v[1] and v[1]:get_id() == SMODS.Ranks.Queen.id then
                 queen = true
                 result[#result+1] = v
             end
-            if v[1]:get_id() == 2 then
+            if v[1] and v[1]:get_id() == 2 then
                 twos = true
                 result[#result+1] = v
             end
@@ -94,6 +109,7 @@ SMODS.PokerHand{
     key = "Polythremian",
     chips = 20,
     mult = 3,
+    above_hand = "marv_Sisters",
     l_chips = 15,
     l_mult = 3,
     example = {
@@ -103,15 +119,19 @@ SMODS.PokerHand{
         { "S_2", true },
         { "H_3", false },
     },
+    visible = function (self)
+        return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
+    end,
     evaluate = function (parts, hand)
+        if not G.GAME.marv_marvellous then return {} end
         local result = {}
         local jack, twos = false, false
-        for i,v in ipairs(parts) do
-            if v[1]:get_id() == SMODS.Ranks.jack.id then
+        for i,v in ipairs(parts._2) do
+            if v[1] and v[1]:get_id() == SMODS.Ranks.Jack.id then
                 jack = true
                 result[#result+1] = v
             end
-            if v[1]:get_id() == 2 then
+            if v[1] and v[1]:get_id() == 2 then
                 twos = true
                 result[#result+1] = v
             end

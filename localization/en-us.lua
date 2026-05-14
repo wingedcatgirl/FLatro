@@ -32,6 +32,7 @@ return {
             marv_Crisis = "Succession Crisis",
             marv_Collusion = "Collusion of Violets",
             marv_Crowns = "Four Crowns",
+            marv_String = "String",
             ["Three of a Kind_alt"] = "Conclave",
             Flush_alt = "Unity",
             marv_Tragedy = "Tragedy Procedure",
@@ -105,7 +106,7 @@ return {
             },
             marv_Crisis = {
                 "Three consecutive ranks,",
-                "in three different suits"
+                "all in different suits"
             },
             marv_Collusion = {
                 "Three cards whose ranks",
