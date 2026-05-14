@@ -28,43 +28,43 @@ table.sort(newhands, function (a, b)
 end)
 
 for i,v in ipairs(newhands) do
-        SMODS.Consumable{
-            set = 'Planet',
-            cost = 3,
-            unlocked = true,
-            no_collection = true,
-            atlas = 'planet_placeholder',
-            pos = { x = 0, y = 0 },
-            key = v.key.."_planet",
-            effect = 'Hand Upgrade',
-            config = {hand_type = v.key, softlock = true},
-            process_loc_text = function(self)
-                --use another planet's loc txt instead
-                local target_text = G.localization.descriptions[self.set]['c_mercury'].text
-                SMODS.Consumable.process_loc_text(self)
-                G.localization.descriptions[self.set][self.key] = G.localization.descriptions[self.set][self.key] or {}
-                G.localization.descriptions[self.set][self.key].name = "#2# Planet Card"
-                G.localization.descriptions[self.set][self.key].text = target_text
-            end,
-            set_card_type_badge = function(self, card, badges)
-                badges[1] = create_badge("Planet?", get_type_colour(self or card.config, card), nil, 1.2)
-            end,
-            loc_vars = function(self, info_queue, card)
-                local hand = card.ability.hand_type
-                return {
-                    vars = {
-                        G.GAME.hands[hand].level,
-                        localize(hand, "poker_hands"),
-                        G.GAME.hands[hand].l_mult,
-                        G.GAME.hands[hand].l_chips,
-                        colours = {
-                            (
-                                G.GAME.hands[hand].level == 1 and G.C.UI.TEXT_DARK
-                                or G.C.HAND_LEVELS[math.min(7, G.GAME.hands[hand].level)]
-                            ),
-                        },
+    SMODS.Consumable{
+        set = 'Planet',
+        cost = 3,
+        unlocked = true,
+        no_collection = not not SMODS.current_mod.version:find("~"),
+        atlas = 'planet_placeholder',
+        pos = { x = 0, y = 0 },
+        key = v.key.."_planet",
+        effect = 'Hand Upgrade',
+        config = {hand_type = v.key, softlock = true},
+        process_loc_text = function(self)
+            --use another planet's loc txt instead
+            local target_text = G.localization.descriptions[self.set]['c_mercury'].text
+            SMODS.Consumable.process_loc_text(self)
+            G.localization.descriptions[self.set][self.key] = G.localization.descriptions[self.set][self.key] or {}
+            G.localization.descriptions[self.set][self.key].name = "#2# Planet Card"
+            G.localization.descriptions[self.set][self.key].text = target_text
+        end,
+        set_card_type_badge = function(self, card, badges)
+            badges[1] = create_badge("Planet?", get_type_colour(self or card.config, card), nil, 1.2)
+        end,
+        loc_vars = function(self, info_queue, card)
+            local hand = card.ability.hand_type
+            return {
+                vars = {
+                    G.GAME.hands[hand].level,
+                    localize(hand, "poker_hands"),
+                    G.GAME.hands[hand].l_mult,
+                    G.GAME.hands[hand].l_chips,
+                    colours = {
+                        (
+                            G.GAME.hands[hand].level == 1 and G.C.UI.TEXT_DARK
+                            or G.C.HAND_LEVELS[math.min(7, G.GAME.hands[hand].level)]
+                        ),
                     },
-                }
-            end,
-        }
+                },
+            }
+        end,
+    }
 end

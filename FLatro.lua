@@ -3,6 +3,10 @@ MARV.config = SMODS.current_mod.config
 
 assert(SMODS.load_file("lib/funcs.lua"))()
 assert(SMODS.load_file("lib/hooks.lua"))()
+if (MODDED_VERSION >= "1.0.0~BETA-1714b-STEAMODDED") and (RELEASE_VERSION >= "1.0.0~BETA-1714b-STEAMODDED") then
+    sendInfoMessage("Hey tell Minty she can delete that part of the localize hook now. and/or check whether she already did that and if so update your Marvellous", "Marvellous")
+end
+
 assert(SMODS.load_file("lib/configui.lua"))()
 assert(SMODS.load_file("etc/deckskin.lua"))()
 assert(SMODS.load_file("etc/back.lua"))()

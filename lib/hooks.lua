@@ -63,5 +63,15 @@ function localize(args, misc_cat)
         end
     end
     
-    return ize(args, misc_cat)
+    local ret = ize(args, misc_cat)
+
+    if (SMODS.Mods["Steamodded"].version < "1.0.0~BETA-1714b-STEAMODDED") and type(ret) == "string" and type(args) == "table" and args.type == "name_text" and (args.vars or args.specific_vars) then
+        for k,v in pairs(args.vars or args.specific_vars) do
+            if type(k) == "number" then
+                ret = ret:gsub("#"..tostring(k).."#", v)
+            end
+        end
+    end
+
+    return ret
 end
