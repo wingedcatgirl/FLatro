@@ -19,7 +19,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local tracker = {}
         for _,string in ipairs(parts.marv_string) do
             tracker[#string] = tracker[#string] or {}
@@ -59,7 +59,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local clubstring, kingbrace
         local cards = {}
         for _,string in ipairs(parts.marv_string) do
@@ -96,7 +96,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local ret = {}
         for _,v in ipairs(parts._flush) do
             local cards = {}
@@ -145,7 +145,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local flight = {}
         for k,v in pairs(parts._straight) do
             flight[k] = v

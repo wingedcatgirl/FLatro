@@ -16,7 +16,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local cards = {}
         local suits = {}
         local count = 0
@@ -61,7 +61,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local res = {}
         local runs = get_straight(hand, 3, SMODS.shortcut())
         if not next(runs) then return {} end

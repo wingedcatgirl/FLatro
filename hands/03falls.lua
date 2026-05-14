@@ -88,7 +88,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -115,7 +115,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -142,7 +142,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -169,7 +169,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -196,7 +196,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -223,7 +223,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 
@@ -250,7 +250,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local fall, city = get_part_with_lowest_card(parts.marv_fall)
         if not next(fall) or not city then return {} end
 

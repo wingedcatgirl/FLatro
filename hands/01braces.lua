@@ -16,7 +16,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local result = {}
         local four, threefive = false, false
         for i,v in ipairs(parts._2) do
@@ -51,7 +51,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local result = {}
         local queen, two = false, false
         for i,v in ipairs(parts._2) do
@@ -88,7 +88,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local result = {}
         local queen, twos = false, false
         for i,v in ipairs(parts._2) do
@@ -123,7 +123,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local result = {}
         local jack, twos = false, false
         for i,v in ipairs(parts._2) do

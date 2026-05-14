@@ -45,7 +45,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         return parts.marv_string
     end
 }

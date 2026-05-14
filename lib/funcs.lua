@@ -6,3 +6,8 @@ MARV.is_above_stake = function(current, target)
     end
     return false
 end
+
+--Checks whether Marvellous rules are active.
+MARV.is_marvellous = function ()
+    return G.GAME.marv_marvellous
+end

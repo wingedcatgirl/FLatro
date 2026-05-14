@@ -16,7 +16,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local runs = get_straight(hand, 4, SMODS.shortcut(), SMODS.wrap_around_straight())
         if not next(runs) then return {} end
         local tragedy = {}
@@ -78,7 +78,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local procedures = {}
         for i,v in ipairs(parts._flush) do
             local runs = get_straight(v, 4, SMODS.shortcut(), SMODS.wrap_around_straight())
@@ -106,7 +106,7 @@ SMODS.PokerHand{
         return G.GAME.hands[self.key].played > 0 or MARV.config.see_all_hands_debug
     end,
     evaluate = function (parts, hand)
-        if not G.GAME.marv_marvellous then return {} end
+        if not MARV.is_marvellous() then  return {} end
         local parliaments = {}
         for _,v in ipairs(parts._flush) do
             local king, queen, jack
