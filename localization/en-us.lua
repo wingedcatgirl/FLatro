@@ -1,5 +1,9 @@
 return {
     misc = {
+        dictionary = {
+            marv_see_hands = "Show all poker hands",
+            marv_force_deckskins = "Force FL skin on Marvellous deck"
+        },
         suits_singular = {
             marv_Clubs = "Bat",
             marv_Diamonds = "Rat",

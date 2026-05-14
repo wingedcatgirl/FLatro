@@ -27,20 +27,22 @@ SMODS.Back{
             end
         })
         --]]
-        for _,suit in pairs{
-            "Hearts", "Clubs", "Diamonds", "Spades"
-        } do
-            local index
-            for i,v in ipairs(G.COLLABS.options[suit]) do
-                if v == "marv_FLatro_"..suit:sub(1,1):lower() then index = i end
+        if MARV.config.force_deckskins then
+            for _,suit in pairs{
+                "Hearts", "Clubs", "Diamonds", "Spades"
+            } do
+                local index
+                for i,v in ipairs(G.COLLABS.options[suit]) do
+                    if v == "marv_FLatro_"..suit:sub(1,1):lower() then index = i end
+                end
+                assert(type(index) == "number", "not like that")
+                G.FUNCS.change_collab{
+                    cycle_config = {
+                        curr_suit = suit
+                    },
+                    to_key = index
+                }
             end
-            assert(type(index) == "number", "not like that")
-            G.FUNCS.change_collab{
-                cycle_config = {
-                    curr_suit = suit
-                },
-                to_key = index
-            }
         end
     end,
     calculate = function (self, back, context)
