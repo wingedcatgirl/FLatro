@@ -16,3 +16,4 @@ for i,v in ipairs(handfolder) do
         assert(SMODS.load_file("hands/"..v))()
     end
 end
+assert(SMODS.load_file("etc/defaultplanets.lua"))()
