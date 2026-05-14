@@ -98,11 +98,11 @@ return {
             },
             marv_Fall6 = {
                 "A Six, Seven, and Eight, in any suits",
-                "Cannot be played"
+                "Can never be played"
             },
             marv_Fall7 = {
                 "A Seven, Eight, and Nine, in any suits",
-                "Cannot be played"
+                "Can never be played"
             },
             marv_Crisis = {
                 "Three consecutive ranks,",
