@@ -4,4 +4,5 @@ Playing The Marvellous by normal means requires first clearing any other deck on
 
 To be added:
 - The River as a cardarea
+- Planets. Or a neathier equivalent for leveling
 - Schemes? Only Bats and Hats seem relevant in solo play...
