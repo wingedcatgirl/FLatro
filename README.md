@@ -3,5 +3,5 @@ Implements the hands in the Marvellous as [collated by bourbon_munch](https://ww
 Playing The Marvellous by normal means requires first clearing any other deck on Gold Stake or higher. If you wish to skip this requirement, might I suggest [re:Unlock All](https://github.com/wingedcatgirl/re-Unlock-All)?
 
 To be added:
-The River as a cardarea
-Schemes? Only Bats and Hats seem relevant in solo play...
+- The River as a cardarea
+- Schemes? Only Bats and Hats seem relevant in solo play...
